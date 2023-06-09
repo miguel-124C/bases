@@ -8,6 +8,7 @@ import { Character } from '../interfaces/character.interface';
 })
 
 export class MainPageComponent { 
+
     public characters: Character[] = [{
         name: 'Krilin',
         power: 1000
@@ -18,4 +19,13 @@ export class MainPageComponent {
         name: 'Vegeta',
         power: 7500
     }];
+
+    onNewCharacter(character: Character): void{
+        this.characters.push(character);
+    }
+
+    onDelete(index: number): void{
+        this.characters.splice(index,1);
+    }
+
 }
